@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clube Radar da Lu</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#080808;
+ color:#f7f2e8;
+ font-family:Arial,sans-serif;
+}
+header{
+ text-align:center;
+ padding:35px 15px;
+ background:linear-gradient(145deg,#16120b,#080808);
+ border-bottom:1px solid #8c6b2b;
+}
+.logo{
+ color:#d8b76a;
+ font-size:29px;
+ font-weight:bold;
+ letter-spacing:2px;
+}
+.subtitle{
+ color:#bfa56c;
+ font-size:13px;
+ margin-top:10px;
+ letter-spacing:3px;
+}
+main{
+ max-width:470px;
+ margin:auto;
+ padding:28px 18px;
+}
+.hero{text-align:center;margin-bottom:28px}
+.hero h1{
+ font-size:28px;
+ color:#e5c47a;
+ line-height:1.25;
+}
+.hero p{color:#bbb;line-height:1.6}
+.card{
+ background:#151515;
+ border:1px solid #80652e;
+ border-radius:18px;
+ padding:25px 20px;
+ box-shadow:0 8px 35px #0008;
+}
+h2{
+ text-align:center;
+ color:#e5c47a;
+ font-size:21px;
+}
+label{
+ display:block;
+ margin:17px 0 7px;
+ font-size:14px;
+}
+input{
+ width:100%;
+ padding:15px;
+ border:1px solid #66552e;
+ border-radius:9px;
+ background:#242424;
+ color:white;
+ font-size:16px;
+}
+button{
+ width:100%;
+ margin-top:22px;
+ padding:16px;
+ background:linear-gradient(100deg,#b58a39,#f3d58c,#b58a39);
+ color:#17110a;
+ border:0;
+ border-radius:9px;
+ font-weight:bold;
+ font-size:16px;
+ cursor:pointer;
+}
+button:disabled{opacity:.5;cursor:not-allowed}
+.notice{
+ margin-top:17px;
+ font-size:12px;
+ color:#aaa;
+ line-height:1.6;
+ text-align:center;
+}
+.hidden{display:none}
+.step{
+ text-align:center;
+ color:#d7b66d;
+ font-size:13px;
+}
+footer{
+ text-align:center;
+ padding:28px;
+ color:#777;
+ font-size:12px;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">✦ RADAR DA LU ✦</div>
+<div class="subtitle">CLUBE EXCLUSIVO</div>
+</header>
+
+<main>
+<section class="hero">
+<h1>Seu lugar no Clube Radar da Lu</h1>
+<p>
+Cadastre-se para acompanhar as novidades
+e futuras campanhas exclusivas do nosso clube.
+</p>
+</section>
+
+<section class="card" id="cadastro">
+<div class="step">ETAPA 1 DE 2</div>
+<h2>Faça seu cadastro</h2>
+
+<form id="formCadastro">
+<label for="nome">Nome completo</label>
+<input id="nome" required
+ placeholder="Digite seu nome"
+ autocomplete="name">
+
+<label for="telefone">WhatsApp com DDD</label>
+<input id="telefone" type="tel" required
+ placeholder="(11) 99999-9999"
+ autocomplete="tel">
+
+<label for="email">E-mail (opcional)</label>
+<input id="email" type="email"
+ placeholder="seuemail@exemplo.com"
+ autocomplete="email">
+
+<button type="submit">CONTINUAR CADASTRO</button>
+</form>
+
+<div class="notice">
+Seus dados serão utilizados para o cadastro
+no clube e a verificação de participação.
+</div>
+</section>
+
+<section class="card hidden" id="verificacao">
+<div class="step">ETAPA 2 DE 2</div>
+<h2>Confirme seu celular</h2>
+<p style="text-align:center;color:#bbb">
+Você receberá um código de 6 dígitos por SMS.
+</p>
+
+<label for="codigo">Código de verificação</label>
+<input id="codigo" inputmode="numeric"
+ maxlength="6" placeholder="000000">
+
+<button type="button" disabled>
+VERIFICAR E GERAR MEU NÚMERO
+</button>
+
+<p class="notice">
+A verificação por SMS será ativada
+após a integração com o Supabase e a Vonage.
+Nenhum código foi enviado nesta demonstração.
+</p>
+
+<button type="button" onclick="voltar()">
+VOLTAR
+</button>
+</section>
+</main>
+
+<footer>
+© 2026 Clube Radar da Lu
+<br>Todos os direitos reservados.
+</footer>
+
+<script>
+const form=document.getElementById("formCadastro");
+form.addEventListener("submit",function(e){
+ e.preventDefault();
+ document.getElementById("cadastro")
+  .classList.add("hidden");
+ document.getElementById("verificacao")
+  .classList.remove("hidden");
+ window.scrollTo(0,0);
+});
+function voltar(){
+ document.getElementById("verificacao")
+  .classList.add("hidden");
+ document.getElementById("cadastro")
+  .classList.remove("hidden");
+}
+</script>
+</body>
+</html>
