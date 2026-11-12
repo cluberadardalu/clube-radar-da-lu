@@ -3,41 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Clube Radar da Lu</title>
+<title>Clube Radar da Lu | Cadastro</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#080808;color:#f7f2e8;font-family:Arial,sans-serif}header{text-align:center;padding:35px 15px;background:linear-gradient(145deg,#16120b,#080808);border-bottom:1px solid #8c6b2b}.logo{color:#d8b76a;font-size:29px;font-weight:bold;letter-spacing:2px}.subtitle{color:#bfa56c;font-size:13px;margin-top:10px;letter-spacing:3px}main{max-width:470px;margin:auto;padding:28px 18px}.hero{text-align:center;margin-bottom:28px}.hero h1{font-size:28px;color:#e5c47a;line-height:1.25}.hero p{color:#bbb;line-height:1.6}.card{background:#151515;border:1px solid #80652e;border-radius:18px;padding:25px 20px;box-shadow:0 8px 35px #0008}h2{text-align:center;color:#e5c47a;font-size:21px}label{display:block;margin:17px 0 7px;font-size:14px}input{width:100%;padding:15px;border:1px solid #66552e;border-radius:9px;background:#242424;color:white;font-size:16px}button{width:100%;margin-top:22px;padding:16px;background:linear-gradient(100deg,#b58a39,#f3d58c,#b58a39);color:#17110a;border:0;border-radius:9px;font-weight:bold;font-size:16px;cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}.notice{margin-top:17px;font-size:12px;color:#aaa;line-height:1.6;text-align:center}.hidden{display:none}.step{text-align:center;color:#d7b66d;font-size:13px}footer{text-align:center;padding:28px;color:#777;font-size:12px}.message{margin-top:16px;text-align:center;font-size:14px;line-height:1.5}.error{color:#ff9e9e}.success{color:#a8e7b0}
+*{box-sizing:border-box}body{margin:0;background:#080808;color:#f7f2e8;font-family:Arial,sans-serif}header{text-align:center;padding:35px 15px;background:linear-gradient(145deg,#16120b,#080808);border-bottom:1px solid #8c6b2b}.logo{color:#d8b76a;font-size:29px;font-weight:bold;letter-spacing:2px}.subtitle{color:#bfa56c;font-size:13px;margin-top:10px;letter-spacing:3px}main{max-width:470px;margin:auto;padding:28px 18px}.hero{text-align:center;margin-bottom:28px}.hero h1{font-size:28px;color:#e5c47a;line-height:1.25}.hero p{color:#bbb;line-height:1.6}.card{background:#151515;border:1px solid #80652e;border-radius:18px;padding:25px 20px;box-shadow:0 8px 35px #0008}h2{text-align:center;color:#e5c47a;font-size:21px}label{display:block;margin:17px 0 7px;font-size:14px}input{width:100%;padding:15px;border:1px solid #66552e;border-radius:9px;background:#242424;color:white;font-size:16px}button{width:100%;margin-top:22px;padding:16px;background:linear-gradient(100deg,#b58a39,#f3d58c,#b58a39);color:#17110a;border:0;border-radius:9px;font-weight:bold;font-size:16px;cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}.notice{margin-top:17px;font-size:12px;color:#aaa;line-height:1.6;text-align:center}.message{margin-top:17px;padding:12px;border-radius:8px;line-height:1.5;text-align:center;display:none}.message.error{display:block;background:#3b1717;color:#ffd2d2}.message.success{display:block;background:#18351f;color:#d3f5d8}footer{text-align:center;padding:28px;color:#777;font-size:12px}.hidden{display:none}
 </style>
 </head>
 <body>
 <header><div class="logo">✦ RADAR DA LU ✦</div><div class="subtitle">CLUBE EXCLUSIVO</div></header>
 <main>
 <section class="hero"><h1>Seu lugar no Clube Radar da Lu</h1><p>Cadastre-se para acompanhar as novidades e futuras campanhas exclusivas do nosso clube.</p></section>
-<section class="card" id="cadastro"><div class="step">ETAPA 1 DE 2</div><h2>Faça seu cadastro</h2>
-<form id="formCadastro"><label for="nome">Nome completo</label><input id="nome" required minlength="3" placeholder="Digite seu nome" autocomplete="name">
-<label for="telefone">WhatsApp com DDD</label><input id="telefone" type="tel" required placeholder="(11) 99999-9999" autocomplete="tel">
-<label for="email">E-mail (opcional)</label><input id="email" type="email" placeholder="seuemail@exemplo.com" autocomplete="email">
-<button id="enviar" type="submit">ENVIAR CÓDIGO POR SMS</button></form><div id="msgCadastro" class="message" role="status" aria-live="polite"></div>
-<div class="notice">Ao continuar, você concorda com o uso dos dados informados para cadastro e verificação de participação no clube. A confirmação de presença no grupo é feita separadamente.</div></section>
-<section class="card hidden" id="verificacao"><div class="step">ETAPA 2 DE 2</div><h2>Confirme seu celular</h2><p style="text-align:center;color:#bbb">Digite o código de 6 dígitos enviado por SMS para <strong id="numeroDestino"></strong>.</p>
-<form id="formVerificacao"><label for="codigo">Código de verificação</label><input id="codigo" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required placeholder="000000" autocomplete="one-time-code"><button id="verificar" type="submit">VERIFICAR CÓDIGO</button></form>
-<div id="msgVerificacao" class="message" role="status" aria-live="polite"></div><button type="button" id="voltar">VOLTAR</button></section>
-<section class="card hidden" id="concluido"><h2>Telefone confirmado!</h2><p style="text-align:center;color:#bbb;line-height:1.6">Seu número foi verificado. A inscrição definitiva e a emissão do número de associado ainda dependem da integração segura do cadastro.</p></section>
+<section class="card" id="cadastro"><h2>Faça seu cadastro</h2>
+<form id="formCadastro">
+<label for="nome">Nome completo *</label><input id="nome" name="nome" required minlength="3" maxlength="120" placeholder="Digite seu nome completo" autocomplete="name">
+<label for="telefone">WhatsApp com DDD *</label><input id="telefone" name="telefone" type="tel" required inputmode="tel" maxlength="20" placeholder="(11) 99999-9999" autocomplete="tel-national">
+<label for="email">E-mail (opcional)</label><input id="email" name="email" type="email" maxlength="254" placeholder="seuemail@exemplo.com" autocomplete="email">
+<button id="enviar" type="submit">CONCLUIR CADASTRO</button>
+</form><div id="mensagem" class="message" role="status" aria-live="polite"></div>
+<div class="notice">Ao cadastrar-se, você autoriza o uso dos dados informados para administrar sua inscrição e verificar sua elegibilidade em futuras campanhas. Seu WhatsApp é obrigatório. A titularidade do número e a participação no grupo não são verificadas automaticamente. O cadastro não garante premiação.</div>
+</section>
+<section class="card hidden" id="concluido"><h2>Cadastro recebido!</h2><p style="text-align:center;color:#bbb;line-height:1.6">Sua inscrição foi registrada. A participação no grupo poderá ser conferida em futuras campanhas e sorteios.</p></section>
 </main><footer>© 2026 Clube Radar da Lu<br>Todos os direitos reservados.</footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-const SUPABASE_URL='https://tqlzvwrxgqouwynfnqgs.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY='sb_publishable_u1aiHbVAo97hr9aJjTI0Zg_fJe1Tp5G';
-const form=document.getElementById('formCadastro');
-const verifyForm=document.getElementById('formVerificacao');
-const enviar=document.getElementById('enviar');
-const verificar=document.getElementById('verificar');
-let telefonePendente='';
-function mensagem(id,txt,erro=false){const el=document.getElementById(id);el.textContent=txt;el.className='message '+(erro?'error':'success');}
-function etapa(id){for(const item of ['cadastro','verificacao','concluido'])document.getElementById(item).classList.toggle('hidden',item!==id);window.scrollTo(0,0);}
-function formatarTelefone(valor){let digitos=valor.replace(/\D/g,'');if(digitos.startsWith('55')&&(digitos.length===12||digitos.length===13))digitos=digitos.slice(2);if(!/^[1-9][0-9]9[0-9]{8}$/.test(digitos))throw new Error('Informe um celular brasileiro válido com DDD e 9 dígitos.');return '+55'+digitos;}
-function cliente(){if(!window.supabase?.createClient)throw new Error('Não foi possível carregar a conexão. Verifique a internet e tente novamente.');return window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);}
-form.addEventListener('submit',async e=>{e.preventDefault();mensagem('msgCadastro','');let phone;try{phone=formatarTelefone(document.getElementById('telefone').value);}catch(err){mensagem('msgCadastro',err.message,true);return;}enviar.disabled=true;enviar.textContent='SOLICITANDO SMS...';try{const {error}=await cliente().auth.signInWithOtp({phone,options:{shouldCreateUser:true}});if(error)throw error;telefonePendente=phone;document.getElementById('numeroDestino').textContent=phone;etapa('verificacao');mensagem('msgVerificacao','Solicitação aceita pelo Supabase. Se o SMS não chegar, será necessário verificar o provedor de envio.');}catch(err){mensagem('msgCadastro','Falha ao solicitar SMS: '+(err.message||'erro desconhecido'),true);}finally{enviar.disabled=false;enviar.textContent='ENVIAR CÓDIGO POR SMS';}});
-verifyForm.addEventListener('submit',async e=>{e.preventDefault();const token=document.getElementById('codigo').value.trim();if(!/^\d{6}$/.test(token)){mensagem('msgVerificacao','Digite os 6 números do código.',true);return;}verificar.disabled=true;verificar.textContent='VERIFICANDO...';try{const {error}=await cliente().auth.verifyOtp({phone:telefonePendente,token,type:'sms'});if(error)throw error;etapa('concluido');}catch(err){mensagem('msgVerificacao','Não foi possível verificar: '+(err.message||'erro desconhecido'),true);}finally{verificar.disabled=false;verificar.textContent='VERIFICAR CÓDIGO';}});
-document.getElementById('voltar').addEventListener('click',()=>etapa('cadastro'));
+const URL_FUNCAO = 'https://tqlzvwrxgqouwynfnqgs.supabase.co/functions/v1/cadastrar-participante';
+const CHAVE_PUBLICA = 'sb_publishable_u1aiHbVAo97hr9aJjTI0Zg_fJe1Tp5G';
+const form = document.getElementById('formCadastro');
+const botao = document.getElementById('enviar');
+const mensagem = document.getElementById('mensagem');
+function mostrarMensagem(texto, tipo='error') { mensagem.textContent=texto; mensagem.className='message '+tipo; }
+form.addEventListener('submit', async (evento) => {
+ evento.preventDefault();
+ const nome = document.getElementById('nome').value.trim().replace(/\s+/g,' ');
+ const whatsapp = document.getElementById('telefone').value.replace(/\D/g,'');
+ const email = document.getElementById('email').value.trim();
+ if (nome.length < 3 || !nome.includes(' ')) { mostrarMensagem('Informe seu nome completo.'); return; }
+ if (!/^[1-9][1-9]9\d{8}$/.test(whatsapp)) { mostrarMensagem('Informe um celular brasileiro com DDD e 11 dígitos.'); return; }
+ botao.disabled=true; botao.textContent='ENVIANDO...'; mensagem.className='message'; mensagem.textContent='';
+ try {
+  const resposta = await fetch(URL_FUNCAO, {
+   method:'POST',
+   headers:{'Content-Type':'application/json','apikey':CHAVE_PUBLICA},
+   body:JSON.stringify({nome,whatsapp,email})
+  });
+  let dados={}; try { dados=await resposta.json(); } catch (_) {}
+  if (!resposta.ok) { mostrarMensagem(dados.mensagem || 'Não foi possível concluir o cadastro. Tente novamente.'); return; }
+  form.reset(); document.getElementById('cadastro').classList.add('hidden'); document.getElementById('concluido').classList.remove('hidden'); window.scrollTo(0,0);
+ } catch (_) { mostrarMensagem('Não foi possível conectar ao cadastro. Verifique sua conexão e tente novamente.'); }
+ finally { botao.disabled=false; botao.textContent='CONCLUIR CADASTRO'; }
+});
 </script>
-</body></html>
+</body>
+</html>
