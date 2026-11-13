@@ -21,7 +21,14 @@
 </form><div id="mensagem" class="message" role="status" aria-live="polite"></div>
 <div class="notice">Ao cadastrar-se, você autoriza o uso dos dados informados para administrar sua inscrição e verificar sua elegibilidade em futuras campanhas. Seu WhatsApp é obrigatório. A titularidade do número e a participação no grupo não são verificadas automaticamente. O cadastro não garante premiação.</div>
 </section>
-<section class="card hidden" id="concluido"><h2>Cadastro recebido!</h2><p style="text-align:center;color:#bbb;line-height:1.6">Sua inscrição foi registrada. A participação no grupo poderá ser conferida em futuras campanhas e sorteios.</p></section>
+<section class="card hidden" id="concluido">
+  <h2>Cadastro realizado com sucesso!</h2>
+  <p style="text-align:center">Seu número de associado é:</p>
+  <h1 id="numeroAssociado" style="text-align:center;font-size:36px">---</h1>
+  <p style="text-align:center;color:#bbb;line-height:1.6">
+    Guarde seu número para futuras campanhas e sorteios do Clube Radar da Lu.
+  </p>
+</section>
 </main><footer>© 2026 Clube Radar da Lu<br>Todos os direitos reservados.</footer>
 <script>
 const URL_FUNCAO = 'https://tqlzvwrxgqouwynfnqgs.supabase.co/functions/v1/cadastrar-participante';
@@ -46,6 +53,11 @@ form.addEventListener('submit', async (evento) => {
   });
   let dados={}; try { dados=await resposta.json(); } catch (_) {}
   if (!resposta.ok) { mostrarMensagem(dados.mensagem || 'Não foi possível concluir o cadastro. Tente novamente.'); return; }
+  const numero = dados.id ?? dados.participante?.id ?? dados.numero_associado;
+if (numero != null) {
+  document.getElementById('numeroAssociado').textContent =
+    String(numero).padStart(6, '0');
+}
   form.reset(); document.getElementById('cadastro').classList.add('hidden'); document.getElementById('concluido').classList.remove('hidden'); window.scrollTo(0,0);
  } catch (_) { mostrarMensagem('Não foi possível conectar ao cadastro. Verifique sua conexão e tente novamente.'); }
  finally { botao.disabled=false; botao.textContent='CONCLUIR CADASTRO'; }
