@@ -52,7 +52,7 @@ form.addEventListener('submit', async (evento) => {
    body:JSON.stringify({nome,whatsapp,email})
   });
   let dados={}; try { dados=await resposta.json(); } catch (_) {}
-  if (!resposta.ok) { mostrarMensagem(dados.mensagem || 'Não foi possível concluir o cadastro. Tente novamente.'); return; }
+  if (!resposta.ok) { mostrarMensagem((dados.erro || dados.mensagem) || 'Não foi possível concluir o cadastro. Tente novamente.'); return; }
   const numero = dados.id ?? dados.participante?.id ?? dados.numero_associado;
 if (numero != null) {
   document.getElementById('numeroAssociado').textContent =
